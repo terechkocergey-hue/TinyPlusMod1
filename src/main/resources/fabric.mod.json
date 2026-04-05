@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "tinyplus",
+  "version": "1.0.0",
+  "name": "TinyPlus Mod",
+  "description": "Уменьшение игроков и анимации",
+  "authors": ["YourName"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.tinyplus.TinyPlusMod"],
+    "client": ["com.tinyplus.TinyPlusModClient"]
+  },
+  "mixins": ["tinyplus.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "1.21.1",
+    "fabric-api": "*"
+  }
+}
