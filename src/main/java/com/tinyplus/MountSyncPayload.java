@@ -15,7 +15,7 @@ public record MountSyncPayload(int entityId, int mountId) implements CustomPaylo
     );
     
     @Override
-    public Id<? extends CustomPayload> getId() {
+    public CustomPayload.Id<? extends CustomPayload> getId() {
         return ID;
     }
 }
