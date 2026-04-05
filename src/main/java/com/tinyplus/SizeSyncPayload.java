@@ -7,7 +7,7 @@ import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
 
 public record SizeSyncPayload(int entityId, float size) implements CustomPayload {
-    public static final CustomPayload.Id<SizeSyncPayload> ID = new CustomPayload.Id<>(ModMessages.SIZE_SYNC_ID);
+    public static final CustomPayload.Id<SizeSyncPayload> ID = new CustomPayload.Id<>(Identifier.of("tinyplus", "size_sync"));
     public static final PacketCodec<RegistryByteBuf, SizeSyncPayload> CODEC = PacketCodec.tuple(
         PacketCodecs.INTEGER, SizeSyncPayload::entityId,
         PacketCodecs.FLOAT, SizeSyncPayload::size,
@@ -15,7 +15,7 @@ public record SizeSyncPayload(int entityId, float size) implements CustomPayload
     );
     
     @Override
-    public Id<? extends CustomPayload> getId() {
+    public CustomPayload.Id<? extends CustomPayload> getId() {
         return ID;
     }
 }
